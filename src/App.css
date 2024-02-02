@@ -4,3 +4,31 @@
   padding: 2rem;
   text-align: center;
 }
+
+/** Header Styles */
+.logo {
+  height: 50px;
+}
+
+.nav-list {
+  list-style-type: none;
+}
+
+.nav-list li {
+  padding: 0.4em;
+  color: #fffffe;
+}
+
+nav {
+  background-color: #ff5470;
+}
+/** Media Query */
+@media (min-width: 568px) {
+  .nav-list {
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+
