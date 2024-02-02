@@ -22,6 +22,21 @@
 nav {
   background-color: #ff5470;
 }
+
+/** Footer  */
+
+footer {
+  background-color: #1b2d45;
+  color: #fffffe;
+  height: 74px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  font-weight: 500;
+}
+
 /** Media Query */
 @media (min-width: 568px) {
   .nav-list {
