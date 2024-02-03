@@ -1,5 +1,4 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -21,6 +20,20 @@
 
 nav {
   background-color: #ff5470;
+}
+
+/** Home */
+
+.action-btn {
+  width: 150px;
+  padding: 0.6em 0;
+  border:6px solid #00ebc7 ;
+  background-color: #fffffe;
+  color: #00214d;
+  font-size: medium;
+  margin:1em;
+  border-radius: 50px;
+
 }
 
 /** Footer  */
