@@ -30,7 +30,7 @@ export default function Home() {
         
         <li className={`account ${clickedAccount == account.id ? 'selected': ''}`} key={account.id} onClick={() => displaySpendings(account.id)}>
             <p>{account.title} </p>
-            <p>$ {account.balance}</p>
+            <p>$ {Number(account.balance).toLocaleString('en-US')}</p>
         </li> 
    ))
 
@@ -65,9 +65,9 @@ export default function Home() {
                                     <div className="progress-container" key={index}>
                                         <div className='progress-bar'>
                                             <p>{spending.category}</p>
-                                            <p>$ {spending.spent}</p>
+                                            <p>$ {Number(spending.spent).toLocaleString()}</p>
                                         </div>
-                                    </div>
+                                    </div>                                                   
                                 ))
                             }
                         </div>
