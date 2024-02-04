@@ -13,6 +13,7 @@ header {
 
 nav {
   background-color: #ff5470;
+  text-align: center;
 }
 
 .nav-list {
@@ -66,17 +67,11 @@ a:hover {
 
 .section-accounts {
   display:flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .selected {
   background-color:#00ebc7 ;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2em;
 }
 
 .account {
@@ -137,6 +132,13 @@ footer {
     justify-content: space-evenly;
     align-items: center;
   }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+  }
+
 }
 
 
