@@ -6,11 +6,11 @@ import Home from './components/Home'
 function App() {
 
   return (
-    <>
-    <Header />
-    <Home />
-    <Footer />
-    </>
+    <div className='app-container'>
+      <Header />
+      <Home />
+      <Footer />
+    </div>
   )
 }
 

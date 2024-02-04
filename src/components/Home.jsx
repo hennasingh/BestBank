@@ -1,11 +1,11 @@
 import React from 'react'
-import { getAccounts, getMainAccountDetails } from '../api'
+import { getAccounts } from '../api'
 
 export default function Home() {
 
     const [accounts, setAccounts] = React.useState([])
     const [clickedAccount , setClickedAccount] = React.useState()
-    const [accountSpendings, setAccountSpendings] = React.useState([])
+    const [accountSpendings, setAccountSpendings] = React.useState({})
 
    React.useEffect(() => {
         async function loadAccounts() {
@@ -37,7 +37,10 @@ export default function Home() {
    const displaySpendings = (accountId) => {
         setClickedAccount(accountId)
         const account = accounts.filter(account => account.id == accountId)[0]
-        setAccountSpendings(account.spendings)
+        setAccountSpendings({
+            spendings: account.spendings, 
+            balance: account.balance}
+            )
    }
 
 
@@ -61,9 +64,9 @@ export default function Home() {
                         <h2>Spendings</h2>
                         <div className="spending-list">
                             {
-                                accountSpendings.map((spending, index) =>(
+                                accountSpendings.spendings?.map((spending, index) =>(
                                     <div className="progress-container" key={index}>
-                                        <div className='progress-bar'>
+                                        <div className='progress-bar' style={{width: `${(accountSpendings.balance - spending.spent) / 100}%`}}>
                                             <p>{spending.category}</p>
                                             <p>$ {Number(spending.spent).toLocaleString()}</p>
                                         </div>

@@ -117,12 +117,12 @@ a:hover {
 footer {
   background-color: #1b2d45;
   color: #fffffe;
-  height: 74px;
   display: flex;
+  margin-top: auto;
+  height:80px;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /** Media Query */
