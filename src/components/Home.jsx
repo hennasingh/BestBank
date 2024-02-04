@@ -21,17 +21,10 @@ export default function Home() {
 
    React.useEffect(() => {
     
-        async function loadSpendings() {
-            try {
-                const mainAccount = await getMainAccountDetails(1)
-                console.log(mainAccount)
-                //setAccountSpendings(mainAccount)
-            } catch(err) {
-                console.log(err)
-            }
-        }
-        loadSpendings()
-   },[])
+    if(accounts.length>0) {
+        displaySpendings(1)
+    }
+   },[accounts])
 
    const accountElements = accounts.map(account => (        
         

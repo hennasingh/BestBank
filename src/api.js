@@ -24,7 +24,10 @@ export async function getAccounts() {
     }))
     return accounts
 }
-
+/**
+ * 
+ * Error running the method below, as database in firebase does not have id:1 field saved
+ */
 export async function getMainAccountDetails(accountId) {
   const snapshot = await getDoc(doc(db, "accounts", accountId))
   return {
