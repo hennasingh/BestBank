@@ -1,10 +1,10 @@
 import React from 'react'
-import { getAccounts } from '../api'
+import { getAccounts, getMainAccountDetails } from '../api'
 
 export default function Home() {
 
     const [accounts, setAccounts] = React.useState([])
-    const [clickedAccount , setClickedAccount] = React.useState(1)
+    const [clickedAccount , setClickedAccount] = React.useState()
     const [accountSpendings, setAccountSpendings] = React.useState([])
 
    React.useEffect(() => {
@@ -12,13 +12,26 @@ export default function Home() {
             try {
                 const data = await getAccounts()
                 setAccounts(data)
-            
             } catch (err) {
                 console.log(err)
             }
         }
         loadAccounts()
    }, [])
+
+   React.useEffect(() => {
+    
+        async function loadSpendings() {
+            try {
+                const mainAccount = await getMainAccountDetails(1)
+                console.log(mainAccount)
+                //setAccountSpendings(mainAccount)
+            } catch(err) {
+                console.log(err)
+            }
+        }
+        loadSpendings()
+   },[])
 
    const accountElements = accounts.map(account => (        
         

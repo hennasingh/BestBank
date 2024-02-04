@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite"
+import { getFirestore, collection,doc, getDocs, getDoc } from "firebase/firestore/lite"
 
 const firebaseConfig = {
   apiKey: "AIzaSyAWANTkIZOL8Rrg1q5cqar27z86reb9QXE",
@@ -23,4 +23,12 @@ export async function getAccounts() {
         id:doc.id
     }))
     return accounts
+}
+
+export async function getMainAccountDetails(accountId) {
+  const snapshot = await getDoc(doc(db, "accounts", accountId))
+  return {
+      ...snapshot.data(),
+      id: snapshot.id
+  }
 }
