@@ -64,9 +64,11 @@ export default function Home() {
                         <h2>Spendings</h2>
                         <div className="spending-list">
                             {
-                                accountSpendings.spendings?.map((spending, index) =>(
+                                accountSpendings.spendings.length == 0 
+                                ? <div><h3>You dont have any spendings!</h3></div>
+                                : accountSpendings.spendings.map((spending, index) =>(
                                     <div className="progress-container" key={index}>
-                                        <div className='progress-bar' style={{width: `${(spending.spent / accountSpendings.balance) * 100}%`}}>
+                                        <div className='progress-bar' style={{width: `${(spending.spent / accountSpendings.balance) * 100 + 60}%`}}>
                                             <p>{spending.category}</p>
                                             <p>$ {Number(spending.spent).toLocaleString()}</p>
                                         </div>

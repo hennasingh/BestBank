@@ -98,9 +98,8 @@ a:hover {
 }
 
 .progress-container {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.8em;
   border-radius: 10px;
-  width:100%;
 }
 
 .progress-bar {
@@ -110,7 +109,9 @@ a:hover {
   background-color:#00ebc7 ;
   border-radius: 10px;
   font-weight: bold;
-
+}
+.progress-bar p {
+  margin: 0.6em 0;
 }
 /** Footer  */
 
@@ -126,7 +127,7 @@ footer {
 }
 
 /** Media Query */
-@media (min-width: 568px) {
+@media (min-width: 700px) {
   .nav-list {
     display:flex;
     justify-content: space-evenly;
