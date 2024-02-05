@@ -5,7 +5,7 @@ export default function Account({accounts, clickedAccount, displaySpendings}) {
     const accountElements = accounts.map(account => (        
         
         <li 
-            className={`account ${clickedAccount == account.id ? 'selected': ''}`} 
+            className={`account-list-item ${clickedAccount == account.id ? 'selected': ''}`} 
             key={account.id} 
             onClick={() => displaySpendings(account.id)}
         >

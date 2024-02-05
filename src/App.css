@@ -18,6 +18,7 @@ nav {
 
 .nav-list {
   list-style-type: none;
+  padding-left: 0;
 }
 
 .nav-list li {
@@ -40,7 +41,11 @@ a:hover {
 
 /** Home */
 
-.buttons {
+/**
+* ACTION BUTTONS
+*/
+
+.container-action-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,42 +59,10 @@ a:hover {
   font-weight: bold;
   margin:1em;
   border-radius: 50px;
-  cursor: pointer
-}
-
-.action-btn, .account {
+  transition: width 1s ease;
   border:6px solid #00ebc7 ;
   background-color: #fffffe;
-}
-.action-btn {
-  transition: width 1s ease;
-}
-
-.section-accounts {
-  display:flex;
-  justify-content: space-evenly;
-}
-
-.selected {
-  background-color:#00ebc7 ;
-}
-
-.account {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.2em;
-  border-radius: 10px;
-  width: 350px;
-  padding: 0.5em 1.2em;
-}
-
-.account-list ul {
-  padding-left:0;
-}
-
-.account p {
-  font-size: 1.2rem;
-  font-weight: bold;
+  cursor: pointer
 }
 
 .action-btn:hover {
@@ -97,9 +70,48 @@ a:hover {
   width: 280px;
 }
 
+/**
+* ACCCOUNT COMPONENT
+*/
+
+.section-accounts {
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.account-list-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.2em;
+  border-radius: 10px;
+  width: 350px;
+  padding: 0.5em 1.2em;
+  cursor: pointer;
+  border:6px solid #00ebc7 ;
+}
+
+.account-list ul {
+  padding-left:0;
+}
+
+.account-list-item p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.selected {
+  background-color:#00ebc7 ;
+  border: 6px solid #fde24f;
+}
+
+/**
+* SPENDING COMPONENT
+*/
+
 .progress-container {
   margin-bottom: 0.8em;
   border-radius: 10px;
+  padding-left: 0;
 }
 
 .progress-bar {
@@ -113,6 +125,7 @@ a:hover {
 .progress-bar p {
   margin: 0.6em 0;
 }
+
 /** Footer  */
 
 footer {

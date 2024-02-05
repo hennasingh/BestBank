@@ -2,12 +2,15 @@ import React from 'react'
 import { getAccounts } from '../api'
 import Account from './Account'
 import Spendings from './Spendings'
+import Error from './Error'
 
 export default function Home() {
 
     const [accounts, setAccounts] = React.useState([])
     const [clickedAccount , setClickedAccount] = React.useState()
     const [accountSpendings, setAccountSpendings] = React.useState({})
+    const [errorState, setErrorState] = React.useState(false)
+    const [error, setError] = React.useState(null)
 
    React.useEffect(() => {
         async function loadAccounts() {
@@ -16,6 +19,8 @@ export default function Home() {
                 setAccounts(data)
             } catch (err) {
                 console.log(err)
+                setErrorState(true)
+                setError(err)
             }
         }
         loadAccounts()
@@ -41,7 +46,7 @@ export default function Home() {
     return (
         <main>
             <section>
-                <div className="buttons">
+                <div className="container-action-buttons">
                     <button className="action-btn">Pay</button>
                     <button className="action-btn">Transfer</button>
                 </div>
@@ -56,6 +61,11 @@ export default function Home() {
                     <Spendings accountSpendings={accountSpendings} />
                 </div>
             </section>
+            { errorState && 
+                <section className="section-error">
+                     <Error error={error} />
+                 </section>
+            }
         </main>
     )
 
